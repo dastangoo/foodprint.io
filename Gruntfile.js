@@ -11,7 +11,19 @@ module.exports = function(grunt) {
                 src: ['test/**/*.js']
             }
         },
-
+        shell: {
+          coverage: {
+            command: 'node_modules/.bin/babel-node node_modules/.bin/isparta cover node_modules/.bin/_mocha -- test/**/*.js'
+          }
+        },
+        open: {
+          coverage: {
+            path: './coverage/lcov-report/index.html'
+          }
+        },
+        clean: {
+          coverage: ['./coverage']
+        },
         eslint: {
             all: ['**/*.js', '!node_modules/**/*.js']
         },
@@ -32,5 +44,10 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-eslint');
     grunt.loadNpmTasks('grunt-sass');
     grunt.loadNpmTasks('grunt-mocha-test');
-};
+    grunt.loadNpmTasks('grunt-shell');
+    grunt.loadNpmTasks('grunt-open');
+    grunt.loadNpmTasks('grunt-contrib-clean');
 
+    grunt.registerTask('coverage', 'Generate coverage report', ['clean:coverage', 'shell:coverage', 'open:coverage'])
+
+};
