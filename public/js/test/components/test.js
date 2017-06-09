@@ -12,5 +12,7 @@ QUnit.test('factory', assert => {
 QUnit.test('component', assert => {
     var component = searchComponent();
     assert.equal( typeof component.init, 'function', 'The component exposes an init method');
-    assert.equal( typeof component.render, 'function', 'The component exposes a render method');
+     assert.equal( typeof component.render, 'function', 'The component exposes a render method');
+     assert.ok(true, 'Useful Test');
+
 });

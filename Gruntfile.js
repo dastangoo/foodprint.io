@@ -54,6 +54,15 @@ module.exports = function(grunt) {
             }
         },
 
+        concurrent: {
+          dev: {
+            tasks: ['watch:dev', 'watch:test'],
+            options: {
+              logConcurrentOutput: true
+            }
+          }
+        },
+
 
 
         browserify: {
@@ -138,4 +147,3 @@ module.exports = function(grunt) {
     grunt.registerTask('dev', 'Run development mode', ['connect:dev', 'open:dev', 'concurrent:dev']);
 
 };
-

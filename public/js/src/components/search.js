@@ -22,7 +22,7 @@ const searchComponent = function searchComponent (){
 
             const button = this.fragment.querySelector('input[type=button]');
             const searchField = this.fragment.querySelector('input[name=search]');
-
+            searchField.style.borderColor = 'red';
             button.addEventListener('click', e => {
 
                 window.console.log(e, searchField.value);
