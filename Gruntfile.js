@@ -6,7 +6,8 @@ module.exports = function(grunt) {
             options: {
                 transform: [
                     ['babelify', {
-                        'presets' : ['es2015']
+                        'presets' : ['
+                        ']
                     }]
                 ]
             },
@@ -64,4 +65,3 @@ module.exports = function(grunt) {
 
     grunt.registerTask('bundle', 'Generate client side bundles', ['browserify:bundle', 'exorcise:bundle', 'uglify:bundle', 'clean:bundle']);
 };
-
