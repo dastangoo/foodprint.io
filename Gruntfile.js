@@ -1,11 +1,23 @@
 module.exports = function(grunt) {
 
+    var env = grunt.option('env') || 'dev';
+
+    var cssStyle = {
+      dev: 'expanded',
+      test: 'nested',
+      prod: 'compressed'
+    };
+
+    grunt.log.debug('Enviroment :' + env);
+    if (!cssStyle[env]) {
+      grunt.log.warn('Unknown enviroment : ' + env);
+    }
     grunt.initConfig({
 
         sass: {
             options: {
                 sourceMap : true,
-                outputStyle : 'compressed'
+                outputStyle : cssStyle[env]
             },
             compile: {
                 'public/css/foodprint.css' : 'public/scss/foodprint.scss'
@@ -154,4 +166,3 @@ module.exports = function(grunt) {
     grunt.registerTask('dev', 'Run development mode', ['connect:dev', 'open:dev', 'concurrent:dev']);
 
 };
-
