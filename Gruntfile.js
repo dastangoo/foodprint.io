@@ -4,19 +4,18 @@ module.exports = function(grunt) {
 
         pkg: grunt.file.readJSON('package.json'),
 
-        mochaTest : {
-            options: {
-                reporter: 'spec',
-                require: 'babel-register'
-            },
-            unit : {
-                src: ['test/**/*_spec.js']
-            },
-            integration : {
-                src: ['test/integration/**/*.js']
-            }
+        mochaTest: {
+          options: {
+            reporter: 'spec',
+            require: 'babel-register'
+          },
+          unit: {
+            src: ['test/unit/**/*_spec.js']
+          },
+          integration: {
+              src: ['test/integration/**/*.js']
+          }
         },
-
 
         eslint: {
             all: ['**/*.js', '!node_modules/**/*.js']
@@ -45,4 +44,3 @@ module.exports = function(grunt) {
         ['mochaTest:unit', 'mochaTest:integration']
     );
 };
-
