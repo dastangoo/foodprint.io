@@ -153,6 +153,11 @@ module.exports = function(grunt) {
                     src: ['bundle.js*']
                 }]
             }
+        },
+        foodfact: {
+          dist: {
+
+          }
         }
     });
 
@@ -181,4 +186,3 @@ module.exports = function(grunt) {
     grunt.registerTask('dev', 'Run development mode', ['connect:dev', 'open:dev', 'concurrent:dev']);
 
 };
-
