@@ -199,4 +199,3 @@ module.exports = function(grunt) {
     grunt.registerTask('dev', 'Run development mode', ['connect:dev', 'open:dev', 'concurrent:dev']);
 
 };
-
