@@ -1,0 +1,32 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'link',
+1 verbose cli   'grunt-foodfact' ]
+2 info using npm@3.10.10
+3 info using node@v6.10.3
+4 verbose link symlinking /usr/local/lib/node_modules/grunt-foodfact to /Users/superuser/foodprint.io/node_modules/grunt-foodfact
+5 silly gentlyRm /Users/superuser/foodprint.io/node_modules/grunt-foodfact is being purged
+6 verbose gentlyRm don't care about contents; nuking /Users/superuser/foodprint.io/node_modules/grunt-foodfact
+7 verbose stack Error: EACCES: permission denied, symlink '../../../../usr/local/lib/node_modules/grunt-foodfact' -> '/Users/superuser/foodprint.io/node_modules/grunt-foodfact'
+7 verbose stack     at Error (native)
+8 verbose cwd /Users/superuser/foodprint.io
+9 error Darwin 16.6.0
+10 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "link" "grunt-foodfact"
+11 error node v6.10.3
+12 error npm  v3.10.10
+13 error path ../../../../usr/local/lib/node_modules/grunt-foodfact
+14 error code EACCES
+15 error errno -13
+16 error syscall symlink
+17 error Error: EACCES: permission denied, symlink '../../../../usr/local/lib/node_modules/grunt-foodfact' -> '/Users/superuser/foodprint.io/node_modules/grunt-foodfact'
+17 error     at Error (native)
+17 error  { Error: EACCES: permission denied, symlink '../../../../usr/local/lib/node_modules/grunt-foodfact' -> '/Users/superuser/foodprint.io/node_modules/grunt-foodfact'
+17 error     at Error (native)
+17 error   errno: -13,
+17 error   code: 'EACCES',
+17 error   syscall: 'symlink',
+17 error   path: '../../../../usr/local/lib/node_modules/grunt-foodfact',
+17 error   dest: '/Users/superuser/foodprint.io/node_modules/grunt-foodfact' }
+18 error Please try running this command again as root/Administrator.
+19 verbose exit [ -13, true ]
