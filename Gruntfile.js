@@ -189,7 +189,8 @@ module.exports = function(grunt) {
 
     grunt.registerTask('bundle', 'Compile client side code', ['browserify:bundle', 'exorcise:bundle', 'uglify:bundle', 'clean:bundle']);
 
-    grunt.registerTask('test', 'Run client side tests', ['browserify:test', 'connect:dev', 'qunit:test']);
+    grunt.registerTask('test', 'Run client side tests', ['browserify:test', 'connect:dev'
+    , 'qunit:test']);
 
 
     grunt.registerTask('build', 'Compile and test, before releasing', ['bundle', 'sass:compile', 'test']);
@@ -197,5 +198,15 @@ module.exports = function(grunt) {
     grunt.registerTask('preview', 'Preview the app', ['bundle', 'sass:compile', 'connect:preview:keepalive']);
 
     grunt.registerTask('dev', 'Run development mode', ['connect:dev', 'open:dev', 'concurrent:dev']);
+
+    grunt.event.on('*.foodfact', funciton(source){
+      grunt.log.debug('Foodfact has made something');
+    grunt.event.on('convert', funciton(source){
+      grunt.log.debug('Conversion of ' + source);
+    grunt.event.on('converted', funciton(source){
+      grunt.log.debug('Conversion of ' + source + 'to' + destination);
+
+    });
+
 
 };
