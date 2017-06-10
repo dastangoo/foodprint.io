@@ -1,17 +1,22 @@
 module.exports = function(grunt) {
 
 
-    var baseDir = 'public/';
 
     grunt.initConfig({
 
+
+        cfg: grunt.file.readJSON('config.json'),
         sass: {
             options: {
                 sourceMap: true,
                 outputStyle: 'compressed'
             },
             compile: {
-                'public/css/foodprint.css': baseDir + 'scss/foodprint.scss'
+                files: [{
+                    dest:'<%= cfg.baseDir %>css/foodprint.css',
+                    src: '<%= cfg.baseDir %>scss/foodprint.scss'
+                  }]
+                }
             }
         },
 
@@ -187,4 +192,3 @@ module.exports = function(grunt) {
     grunt.registerTask('dev', 'Run development mode', ['connect:dev', 'open:dev', 'concurrent:dev']);
 
 };
-
