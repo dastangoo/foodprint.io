@@ -155,9 +155,11 @@ module.exports = function(grunt) {
             }
         },
         foodfact: {
-          dist: {
-
-          }
+            update: {
+              options: {
+                urls: []
+              }
+            }
         }
     });
 
