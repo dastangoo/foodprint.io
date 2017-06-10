@@ -1,4 +1,4 @@
-/**
+ /**
  * Client side source bundling
  *
  * grunt bundle

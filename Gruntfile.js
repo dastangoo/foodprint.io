@@ -51,4 +51,3 @@ module.exports = function(grunt) {
     grunt.registerTask('build',   'Compile and test, before releasing', ['bundle', 'sass:compile', 'test']);
     grunt.registerTask('default', 'Compile and test, before releasing', ['build']);
 };
-
