@@ -5,19 +5,6 @@ module.exports = function(grunt) {
 
         pkg: grunt.file.readJSON('package.json'),
 
-        sass: {
-            options: {
-                sourceMap: true,
-                outputStyle: 'compressed'
-            },
-            compile: {
-                files : [{
-                    dest: '<%= pkg.cfg.baseDir %>css/foodprint.css',
-                    src : '<%= pkg.cfg.baseDir %>scss/foodprint.scss'
-                }]
-            }
-        },
-
         connect: {
             options: {
                 hostname: '<%= pkg.cfg.server.host %>',
@@ -135,15 +122,6 @@ module.exports = function(grunt) {
             },
             update: ['data/db.json']
         },
-        watch: {
-            dev: {
-                files: ['<%= pkg.cfg.baseDir %>js/src/**/*.js'],
-                tasks: ['bundle'],
-                options: {
-                    livereload: true
-                }
-            }
-        },
 
 
         concurrent: {
@@ -168,5 +146,5 @@ module.exports = function(grunt) {
 
     grunt.registerTask('dev', 'Run development mode', ['connect:dev', 'open:dev', 'concurrent:dev']);
 
+    grunt.loadTasks('grunt/');
 };
-
