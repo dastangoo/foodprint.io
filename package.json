@@ -4,6 +4,9 @@
   "description": "Take the control back on the food you ingest.",
   "author": "Bertrand Chevrier <chevrier.bertrand@gmail.com>",
   "license": "MIT",
+  scripts: {
+    "bundle": "grunt bundle"
+  }
   "dependencies": {
     "express": "^4.13.3"
   },
@@ -25,5 +28,13 @@
     "grunt-sass": "^1.1.0",
     "load-grunt-tasks": "^3.4.1",
     "qunitjs": "^1.21.0"
+  },
+  cfg: {
+    baseDir: "public/",
+    server: {
+      host: localhost,
+      port: 4321
+    },
+    browser: firefox --no-remote
   }
 }

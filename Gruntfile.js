@@ -3,8 +3,7 @@ module.exports = function(grunt) {
 
     grunt.initConfig({
 
-        cfg: grunt.file.readJSON('config.json'),
-
+        pkg: grunt.file.readJSON('package.json'),
         sass: {
             options: {
                 sourceMap: true,
@@ -194,4 +193,3 @@ module.exports = function(grunt) {
     grunt.registerTask('dev', 'Run development mode', ['connect:dev', 'open:dev', 'concurrent:dev']);
 
 };
-
